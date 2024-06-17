@@ -11,6 +11,9 @@ import Register from './pages/login/components/Register'
 function App() {
   return (
     <div className="min-h-screen flex flex-col" style={{backgroundImage:`url(${backgroundImage})`, backgroundSize: 'cover',backgroundPosition: 'center' }}>
+      <div className="bg-blue-600 p-4 text-white">
+          <h2>RED SOCIAL</h2>
+      </div>
       <Router>
         <Routes>
           <Route path="/" element={<Login/>}/>

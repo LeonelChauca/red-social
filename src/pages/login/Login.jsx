@@ -1,16 +1,12 @@
 import React from 'react'
 import { InputLogin } from './components/InputLogin'
-import backgroundImage from '../../../public/fondo.svg'
 import { motion } from "framer-motion"
 import { useNavigate } from 'react-router-dom'
-import Register from './components/Register'
+import { Toaster, toast } from 'sonner'
+import {toastError} from '../../helpers/ToastCustom'
 export const Login = () => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen flex flex-col" style={{backgroundImage:`url(${backgroundImage})`, backgroundSize: 'cover',backgroundPosition: 'center' }}>
-      <div className="bg-blue-600 p-4 text-white">
-          <h2>RED SOCIAL</h2>
-      </div>
       <div className="flex flex-grow justify-center items-center">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -27,7 +23,6 @@ export const Login = () => {
                   </div>
               </motion.div>
       </div>
-    </div>
 
   )
 }
