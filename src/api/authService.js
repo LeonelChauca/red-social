@@ -1,10 +1,11 @@
 import axios from "axios";
 
-const API_URL='';
+const API_URL='https://retsapi-redsocial.onrender.com';
 
 export const login=async(data)=>{
+    console.log("hola")
     try{
-        const response= await axios.get(`${API_URL}/`,{data},{withCredentials:true})
+        const response= await axios.post(`${API_URL}/api/auth/login`,data)
         return response.data;
     } catch(error){
         console.error("error de login : ",error);
@@ -20,3 +21,4 @@ export const register=async(data)=>{
         console.error("error de registro :",error);
     }
 }
+

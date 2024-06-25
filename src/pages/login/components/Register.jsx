@@ -14,17 +14,16 @@ const Register = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    console.log("hola");
     // Aquí puedes manejar el envío del formulario, por ejemplo, enviarlo a tu backend
   };
   useEffect(() => {
-    if(errors.name) toastError(errors.name.message, "Error")
-    if(errors.last_name) toastError(errors.last_name.message, "Error")
-    if(errors.correo) toastError(errors.correo.message, "Error")
-    if(errors.numero) toastError(errors.numero.message, "Error")
-    if(errors.f_nac) toastError(errors.f_nac.message, "Error")
-    if(errors.pass) toastError(errors.pass.message, "Error")
-  }, [errors])
+    const errores = ['name', 'last_name', 'correo', 'numero', 'f_nac', 'pass'];
+
+    errores.forEach(name => {
+      if(errors[name]) toastError(errors[name].message, "Error");
+    });
+  }, [errors]);
+  
   
   return (
     <div className="flex flex-grow justify-center items-center">
